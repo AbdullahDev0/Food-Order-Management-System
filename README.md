@@ -1,73 +1,93 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Food Order Management System
 
-## Description
+The project is aimed to provide online lunch order management system for their employees.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Appendix
+
+[Introduction](https://github.com/AbdullahDev0/Food-Order-Management-System/edit/main/README.md#introduction)
+
+[Features](https://github.com/AbdullahDev0/Food-Order-Management-System/edit/main/README.md#features)
+
+[Installation](https://github.com/AbdullahDev0/Food-Order-Management-System/edit/main/README.md#installation)
+
+[Future Features](https://github.com/AbdullahDev0/Food-Order-Management-System/edit/main/README.md#future-features)
+
+[Feedback](https://github.com/AbdullahDev0/Food-Order-Management-System/edit/main/README.md#feedback)
+
+
+
+
+## Introduction
+The project provides RESTful APIs for order managements system.
+It allows the users to place food orders and the office managerial
+staff to easily process the orders and partially automate lunch
+system. Since the project is in alpha stage so there might be some issues
+that can cause server crash.
+
+The project API details are available through [Postman
+documentation](https://documenter.getpostman.com/view/19499937/2s7YfR7sw6) To use complete features of this project, it requires
+another project [Food-Order-Management-System-RabbitMQ](https://github.com/AbdullahDev0/Food-Order-Management-System-RabbitMQ).
+
+
+## Features
+
+- Two roles, admin and users
+- Dynamic food addition
+- Multiple food orders with comments management
+- Daily scheduled PDF email of placed orders (uses RabbitMQ)
 ## Installation
 
-```bash
-$ npm install
-```
+The project requires
 
-## Running the app
+- NEST JS
+- RabbitMQ
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
+To deploy this project, clone it by running following command in command prompt:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+git clone https://github.com/AbdullahDev0/Food-Order-Management-System.git
 ```
 
-## Support
+Then install the required package by:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+npm install
+```    
 
-## Stay in touch
+To run the project, open command prompt in project cloned directory and type command:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+nest start
+```    
 
-## License
+(Optional) Also clone the other repo through command prompt by:
 
-Nest is [MIT licensed](LICENSE).
+```bash
+git clone https://github.com/AbdullahDev0/Food-Order-Management-System-RabbitMQ.git
+```
+
+Then install the required package by:
+
+```bash
+npm install
+```    
+Then run it by opening command prompt in project cloned directory and typing command:
+
+```bash
+nest start
+```  
+## Future Features
+
+- Create unit and feature test cases
+- Add admin control for schedule printing
+- Create React JS based frontend
+## Feedback
+#### “Being critical isn’t the same as being disrespectful.”
+
+#### ― A.D. Aliwat, In Limbo
+
+If you have any feedback, please reach out to us at abdullahirfandev@gmail.com.
