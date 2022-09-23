@@ -26,11 +26,8 @@ The project provides RESTful APIs for order managements system.
 It allows the users to place food orders and the office managerial
 staff to easily process the orders and partially automate lunch
 system. Since the project is in alpha stage so there might be some issues
-that can cause server crash.
-
-The project API details are available through [Postman
-documentation](https://documenter.getpostman.com/view/19499937/2s7YfR7sw6) To use complete features of this project, it requires
-another project [Food-Order-Management-System-RabbitMQ](https://github.com/AbdullahDev0/Food-Order-Management-System-RabbitMQ).
+that can cause server crash. The project API details are available through [Postman
+documentation](https://documenter.getpostman.com/view/19499937/2s7YfR7sw6).
 
 
 ## Features
@@ -58,28 +55,31 @@ Then install the required package by:
 npm install
 ```    
 
-To run the project, open command prompt in project cloned directory and type command:
+To run the project alone without rabbit-mq, open command prompt in project cloned directory and type command:
 
 ```bash
-nest start
+npm run start
 ```    
 
-(Optional) Also clone the other repo through command prompt by:
+To run the project alone with rabbit-mq, open command prompt in project cloned directory and type command:
 
 ```bash
-git clone https://github.com/AbdullahDev0/Food-Order-Management-System-RabbitMQ.git
+npm run start:all
 ```
 
-Then install the required package by:
+(Optional) In order to run the project in development mode, without rabbit-mq:
 
 ```bash
-npm install
-```    
-Then run it by opening command prompt in project cloned directory and typing command:
+npm run start:dev
+```
+
+(Optional) In order to run the project in development mode, with rabbit-mq:
 
 ```bash
-nest start
-```  
+npm run dev:all
+```
+
+  
 ## Future Features
 
 - Create unit and feature test cases
