@@ -39,7 +39,7 @@ export class AuthService {
     const user = await this.userRepository.findOneBy({ email });
     const payload = { email: user.email, roles: user.role };
     return {
-      statuscode: 200,
+      statuscode: 201,
       message: 'token created successfully',
       data: {
         name: user.name,

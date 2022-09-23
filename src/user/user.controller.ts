@@ -19,6 +19,8 @@ import { JwtAuthGuard } from 'src/shared/guards/jwt-auth.guard';
 import { Roles } from 'src/shared/decorators/roles.decorator';
 import { Role } from 'src/shared/enums/role.enum';
 import { RolesGuard } from 'src/shared/guards/roles.guard';
+import { SetStateDTO } from './dto/set-state.dto';
+import { SetRoleDTO } from './dto/set-role.dto';
 
 @UseInterceptors(ClassSerializerInterceptor)
 @UsePipes(ValidationPipe)
@@ -76,14 +78,14 @@ export class UserController {
   @Roles(Role.Admin)
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Patch('active/:id')
-  active(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.active(+id, updateUserDto);
+  active(@Param('id') id: string, @Body() setStatDTO: SetStateDTO) {
+    return this.userService.active(+id, setStatDTO);
   }
 
   @Roles(Role.Admin)
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Patch('admin/:id')
-  admin(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.admin(+id, updateUserDto);
+  admin(@Param('id') id: string, @Body() setRoleDTO: SetRoleDTO) {
+    return this.userService.admin(+id, setRoleDTO);
   }
 }

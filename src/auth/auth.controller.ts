@@ -27,7 +27,7 @@ import { Cron } from '@nestjs/schedule';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @UseGuards(LocalAuthGuard)
+  // @UseGuards(LocalAuthGuard)
   @Post()
   async create(@Body() loginAuthDto: LoginAuthDto) {
     return this.authService.login(loginAuthDto);

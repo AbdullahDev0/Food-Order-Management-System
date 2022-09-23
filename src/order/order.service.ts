@@ -62,19 +62,14 @@ export class OrderService {
     };
   }
 
-  async update(id: number, updateOrderDto: UpdateOrderDto) {
-    await this.findOrder(id);
-    await this.orderRepository.update(id, updateOrderDto);
-    return {
-      statuscode: 200,
-      message: 'order updated successfully',
-      data: {},
-    };
-  }
-
-  async remove(id: number) {
-    await this.findOrder(id);
-    await this.orderRepository.delete(id);
+  async remove(@Req() request) {
+    const { morning, evening } = this.getDateRange();
+    const { userId, order } = await this.checkOrder(request);
+    if (!order.length) throw new NotFoundException('order is not placed');
+    await this.orderRepository.delete({
+      user: { id: userId },
+      created_at: Between(morning, evening),
+    });
     return {
       statuscode: 200,
       message: 'order deleted successfully',
@@ -112,7 +107,7 @@ export class OrderService {
   async bulkDelete(@Req() request) {
     const { morning, evening } = this.getDateRange();
     const { userId, order } = await this.checkOrder(request);
-    if (!order.length) throw new NotFoundException('item not found in order');
+    if (!order.length) throw new NotFoundException('order is not placed');
     await this.orderRepository.delete({
       user: { id: userId },
       created_at: Between(morning, evening),
@@ -162,7 +157,7 @@ export class OrderService {
     const userId = await (await this.userRepository.findOneBy({ email })).id;
     return {
       statuscode: 200,
-      message: 'order by ID',
+      message: 'order by user',
       data: {
         orders: await this.orderRepository.find({
           where: {

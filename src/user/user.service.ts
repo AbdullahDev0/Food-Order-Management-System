@@ -8,6 +8,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { encodePassword } from 'src/shared/utils/bcrypt';
 import { IsNull, Not, Repository } from 'typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
+import { SetRoleDTO } from './dto/set-role.dto';
+import { SetStateDTO } from './dto/set-state.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Users } from './entities/user.entity';
 import { SerializedUser } from './types';
@@ -85,11 +87,11 @@ export class UserService {
     };
   }
 
-  async active(id: number, updateUserDto: UpdateUserDto) {
+  async active(id: number, setStatDTO: SetStateDTO) {
     const user = await this.getUserbyId(id);
-    if (updateUserDto.active === user.active)
-      throw new BadRequestException('defined state already set');
-    await this.userRepository.update(id, updateUserDto);
+    if (setStatDTO.active === user.active)
+      throw new ConflictException('defined state already set');
+    await this.userRepository.update(id, setStatDTO);
     return {
       statuscode: 200,
       message: 'user state set successfully',
@@ -97,11 +99,11 @@ export class UserService {
     };
   }
 
-  async admin(id: number, updateUserDto: UpdateUserDto) {
+  async admin(id: number, setRoleDTO: SetRoleDTO) {
     const user = await this.getUserbyId(id);
-    if (updateUserDto.role === user.role)
-      throw new BadRequestException('role is already set to ' + user.role);
-    await this.userRepository.update(id, updateUserDto);
+    if (setRoleDTO.role === user.role)
+      throw new ConflictException('role is already set to ' + user.role);
+    await this.userRepository.update(id, setRoleDTO);
     return {
       statuscode: 200,
       message: 'user role set successfully',
