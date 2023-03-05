@@ -28,6 +28,7 @@ staff to easily process the orders and partially automate lunch
 system. Since the project is in alpha stage so there might be some issues
 that can cause server crash. The project API details are available through [Postman
 documentation](https://documenter.getpostman.com/view/19499937/2s7YfR7sw6).
+The collection end points are same, their response has been changed a little, will update them soon.
 
 
 ## Features
