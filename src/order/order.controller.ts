@@ -13,21 +13,23 @@ import {
   Req,
   UseInterceptors,
   ClassSerializerInterceptor,
+  UseFilters,
 } from '@nestjs/common';
 import { OrderService } from './order.service';
 import { CreateOrderDto } from './dto/create-order.dto';
-import { UpdateOrderDto } from './dto/update-order.dto';
 import { Roles } from 'src/shared/decorators/roles.decorator';
 import { Role } from 'src/shared/enums/role.enum';
 import { JwtAuthGuard } from 'src/shared/guards/jwt-auth.guard';
 import { RolesGuard } from 'src/shared/guards/roles.guard';
 import { CreateBulkOrderDto } from './dto/create-bulk-order.dto';
+import { HttpExceptionFilter } from 'src/shared/filters/http-exception.filter';
 
 // @Roles(Role.Admin)
 @UseInterceptors(ClassSerializerInterceptor)
 @Roles(Role.Admin, Role.User)
 @UseGuards(JwtAuthGuard, RolesGuard)
 @UsePipes(ValidationPipe)
+@UseFilters(HttpExceptionFilter)
 @Controller('order')
 export class OrderController {
   constructor(private readonly orderService: OrderService) {}

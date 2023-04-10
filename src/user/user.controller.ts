@@ -11,6 +11,7 @@ import {
   UseGuards,
   UsePipes,
   ValidationPipe,
+  UseFilters,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -21,9 +22,11 @@ import { Role } from 'src/shared/enums/role.enum';
 import { RolesGuard } from 'src/shared/guards/roles.guard';
 import { SetStateDTO } from './dto/set-state.dto';
 import { SetRoleDTO } from './dto/set-role.dto';
+import { HttpExceptionFilter } from 'src/shared/filters/http-exception.filter';
 
 @UseInterceptors(ClassSerializerInterceptor)
 @UsePipes(ValidationPipe)
+@UseFilters(HttpExceptionFilter)
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}

@@ -9,6 +9,7 @@ import {
   UseGuards,
   ValidationPipe,
   UsePipes,
+  UseFilters,
 } from '@nestjs/common';
 import { FoodService } from './food.service';
 import { CreateFoodDto } from './dto/create-food.dto';
@@ -17,10 +18,12 @@ import { Roles } from 'src/shared/decorators/roles.decorator';
 import { Role } from 'src/shared/enums/role.enum';
 import { JwtAuthGuard } from 'src/shared/guards/jwt-auth.guard';
 import { RolesGuard } from 'src/shared/guards/roles.guard';
+import { HttpExceptionFilter } from 'src/shared/filters/http-exception.filter';
 
 @UsePipes(ValidationPipe)
 @Roles(Role.Admin)
 @UseGuards(JwtAuthGuard, RolesGuard)
+@UseFilters(HttpExceptionFilter)
 @Controller('food')
 export class FoodController {
   constructor(private readonly foodService: FoodService) {}
