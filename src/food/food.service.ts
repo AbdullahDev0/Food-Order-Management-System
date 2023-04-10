@@ -28,11 +28,19 @@ export class FoodService {
   }
 
   async findAll() {
-    return customMessage(HttpStatus.OK, 'all food names list');
+    return customMessage(
+      HttpStatus.OK,
+      'all food names list',
+      await this.foodRepository.find(),
+    );
   }
 
   async findOne(id: number) {
-    return customMessage(HttpStatus.OK, 'food name by id');
+    return customMessage(
+      HttpStatus.OK,
+      'food name by id',
+      await this.getData(id),
+    );
   }
 
   async update(id: number, updateFoodDto: UpdateFoodDto) {
