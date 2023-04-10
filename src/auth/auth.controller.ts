@@ -14,14 +14,14 @@ import {
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginAuthDto } from './dto/login-auth.dto';
-import { LocalAuthGuard } from 'src/shared/guards/local-auth.guard';
-import { Role } from 'src/shared/enums/role.enum';
-import { Roles } from 'src/shared/decorators/roles.decorator';
-import { JwtAuthGuard } from 'src/shared/guards/jwt-auth.guard';
-import { RolesGuard } from 'src/shared/guards/roles.guard';
+import { LocalAuthGuard } from '../shared/guards/local-auth.guard';
+import { Role } from '../shared/enums/role.enum';
+import { Roles } from '../shared/decorators/roles.decorator';
+import { JwtAuthGuard } from '../shared/guards/jwt-auth.guard';
+import { RolesGuard } from '../shared/guards/roles.guard';
 import { ResetPasswordDto } from './dto/reset-password.dto';
 import { Cron } from '@nestjs/schedule';
-import { HttpExceptionFilter } from 'src/shared/filters/http-exception.filter';
+import { HttpExceptionFilter } from '../shared/filters/http-exception.filter';
 
 @UseInterceptors(ClassSerializerInterceptor)
 @UsePipes(ValidationPipe)

@@ -8,9 +8,9 @@ import {
   JoinColumn,
   DeleteDateColumn,
 } from 'typeorm';
-import { Comments } from 'src/order/entities/comment.entity';
-import { Orders } from 'src/order/entities/order.entity';
-import { Role } from 'src/shared/enums/role.enum';
+import { Comments } from '../../order/entities/comment.entity';
+import { Orders } from '../../order/entities/order.entity';
+import { Role } from '../../shared/enums/role.enum';
 
 @Entity()
 export class Users {

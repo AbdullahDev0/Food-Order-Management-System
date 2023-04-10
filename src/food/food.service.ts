@@ -9,7 +9,7 @@ import { Repository } from 'typeorm';
 import { CreateFoodDto } from './dto/create-food.dto';
 import { UpdateFoodDto } from './dto/update-food.dto';
 import { Foods } from './entities/food.entity';
-import customMessage from 'src/shared/responses/customMessage.response';
+import customMessage from '../shared/responses/customMessage.response';
 
 @Injectable()
 export class FoodService {

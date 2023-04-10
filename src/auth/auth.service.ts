@@ -9,14 +9,14 @@ import {
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { LoginAuthDto } from './dto/login-auth.dto';
-import { Users } from 'src/user/entities/user.entity';
+import { Users } from '../user/entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { LessThan, Repository } from 'typeorm';
-import { comparePasswords, encodePassword } from 'src/shared/utils/bcrypt';
+import { comparePasswords, encodePassword } from '../shared/utils/bcrypt';
 import { ResetPasswordDto } from './dto/reset-password.dto';
 import { ClientProxy } from '@nestjs/microservices';
 import { Auth } from './entities/auth.entity';
-import customMessage from 'src/shared/responses/customMessage.response';
+import customMessage from '../shared/responses/customMessage.response';
 
 @Injectable()
 export class AuthService {

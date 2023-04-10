@@ -16,13 +16,13 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { JwtAuthGuard } from 'src/shared/guards/jwt-auth.guard';
-import { Roles } from 'src/shared/decorators/roles.decorator';
-import { Role } from 'src/shared/enums/role.enum';
-import { RolesGuard } from 'src/shared/guards/roles.guard';
+import { JwtAuthGuard } from '../shared/guards/jwt-auth.guard';
+import { Roles } from '../shared/decorators/roles.decorator';
+import { Role } from '../shared/enums/role.enum';
+import { RolesGuard } from '../shared/guards/roles.guard';
 import { SetStateDTO } from './dto/set-state.dto';
 import { SetRoleDTO } from './dto/set-role.dto';
-import { HttpExceptionFilter } from 'src/shared/filters/http-exception.filter';
+import { HttpExceptionFilter } from '../shared/filters/http-exception.filter';
 
 @UseInterceptors(ClassSerializerInterceptor)
 @UsePipes(ValidationPipe)

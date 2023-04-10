@@ -5,7 +5,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { encodePassword } from 'src/shared/utils/bcrypt';
+import { encodePassword } from '../shared/utils/bcrypt';
 import { IsNull, Not, Repository } from 'typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
 import { SetRoleDTO } from './dto/set-role.dto';
@@ -13,7 +13,7 @@ import { SetStateDTO } from './dto/set-state.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Users } from './entities/user.entity';
 import { SerializedUser } from './types';
-import customMessage from 'src/shared/responses/customMessage.response';
+import customMessage from '../shared/responses/customMessage.response';
 
 @Injectable()
 export class UserService {

@@ -2,7 +2,7 @@
 import * as nodemailer from 'nodemailer';
 
 export async function pdf_mail() {
-  const path = 'src/shared/temp/result.pdf';
+  const path = '../shared/temp/result.pdf';
   const date_ob = new Date();
   const date = date_ob.getDate();
   const month = date_ob.getMonth();

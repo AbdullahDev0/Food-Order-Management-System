@@ -1,6 +1,6 @@
 import { Exclude } from 'class-transformer';
-import { Comments } from 'src/order/entities/comment.entity';
-import { Orders } from 'src/order/entities/order.entity';
+import { Comments } from '../../order/entities/comment.entity';
+import { Orders } from '../../order/entities/order.entity';
 
 export class SerializedUser {
   id: number;

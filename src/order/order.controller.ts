@@ -17,12 +17,12 @@ import {
 } from '@nestjs/common';
 import { OrderService } from './order.service';
 import { CreateOrderDto } from './dto/create-order.dto';
-import { Roles } from 'src/shared/decorators/roles.decorator';
-import { Role } from 'src/shared/enums/role.enum';
-import { JwtAuthGuard } from 'src/shared/guards/jwt-auth.guard';
-import { RolesGuard } from 'src/shared/guards/roles.guard';
+import { Roles } from '../shared/decorators/roles.decorator';
+import { Role } from '../shared/enums/role.enum';
+import { JwtAuthGuard } from '../shared/guards/jwt-auth.guard';
+import { RolesGuard } from '../shared/guards/roles.guard';
 import { CreateBulkOrderDto } from './dto/create-bulk-order.dto';
-import { HttpExceptionFilter } from 'src/shared/filters/http-exception.filter';
+import { HttpExceptionFilter } from '../shared/filters/http-exception.filter';
 
 // @Roles(Role.Admin)
 @UseInterceptors(ClassSerializerInterceptor)

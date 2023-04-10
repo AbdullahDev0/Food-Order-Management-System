@@ -13,7 +13,7 @@ export class AppService {
   }
   async generateEmailPDF() {
     try {
-      const path = 'src/shared/temp/result.pdf';
+      const path = '../shared/temp/result.pdf';
       const browser = await puppeteer.launch();
       const page = await browser.newPage();
       const website_url = 'http://localhost/sample-order/';

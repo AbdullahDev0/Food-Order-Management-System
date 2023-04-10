@@ -8,7 +8,7 @@ import {
   JoinColumn,
   Relation,
 } from 'typeorm';
-import { Users } from 'src/user/entities/user.entity';
+import { Users } from '../../user/entities/user.entity';
 
 @Entity()
 export class Comments {

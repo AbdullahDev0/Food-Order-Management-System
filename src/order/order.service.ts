@@ -9,14 +9,14 @@ import {
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Users } from 'src/user/entities/user.entity';
+import { Users } from '../user/entities/user.entity';
 import { Between, Repository } from 'typeorm';
 import { CreateBulkOrderDto } from './dto/create-bulk-order.dto';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { Comments } from './entities/comment.entity';
 import { Orders } from './entities/order.entity';
 import { SerializedOrder } from './types';
-import customMessage from 'src/shared/responses/customMessage.response';
+import customMessage from '../shared/responses/customMessage.response';
 
 @Injectable()
 export class OrderService {
