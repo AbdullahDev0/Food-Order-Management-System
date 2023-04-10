@@ -1,7 +1,8 @@
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { PassportStrategy } from '@nestjs/passport';
-import { Injectable, ForbiddenException } from '@nestjs/common';
+import { Injectable, ForbiddenException, HttpStatus } from '@nestjs/common';
 import { AuthService } from 'src/auth/auth.service';
+import customMessage from '../responses/customMessage.response';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -18,7 +19,9 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     const rawToken = req.headers['authorization'].split(' ')[1];
     await this.authService.verify(rawToken);
     if ((await this.authService.verify(rawToken)).length)
-      throw new ForbiddenException('User is not authorized');
+      throw new ForbiddenException(
+        customMessage(HttpStatus.FORBIDDEN, 'user is not authorized'),
+      );
     return { email: payload.email, roles: payload.roles };
   }
 }
