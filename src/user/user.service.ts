@@ -126,7 +126,7 @@ export class UserService {
       ).length == 0
     )
       throw new NotFoundException(
-        customMessage(HttpStatus.CONFLICT, 'user not found in deleted'),
+        customMessage(HttpStatus.NOT_FOUND, 'user not found in deleted'),
       );
     this.userRepository.restore(id);
     return customMessage(HttpStatus.OK, 'user restored successfully');
@@ -136,7 +136,7 @@ export class UserService {
     const user = await this.userRepository.findOneBy({ id });
     if (!user)
       throw new NotFoundException(
-        customMessage(HttpStatus.CONFLICT, "user doesn't exist"),
+        customMessage(HttpStatus.NOT_FOUND, "user doesn't exist"),
       );
     return user;
   }
