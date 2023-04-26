@@ -22,11 +22,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.0.0
-      - name: Install Dependencies and Build React App
+      - name: Install Dependencies and Build Nest App
         run: |
           pwd
           ls -la
           npm ci
+          npm install --prefix ./Rabbit-MQ
           npm run build
       # - run: npm --prefix ~/Food-Order-Management-System run build
       # - run: pm2 restart foms
