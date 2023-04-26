@@ -15,8 +15,11 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }} # User of the server you want to ssh into
      
           script: |
-            cd Food-Order-Management-System 
+            cd Food-Order-Management-System
             git pull
             echo 'Deployment successful to digital ocean'
-      - run: npm --prefix ~/Food-Order-Management-System run build 
+      - run: npm run build
+      working-directory: Food-Order-Management-System
       - run: pm2 restart foms
+      working-directory: Food-Order-Management-System
+
