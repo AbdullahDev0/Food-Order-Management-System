@@ -15,7 +15,8 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }} # User of the server you want to ssh into
      
           script: |
-            mkdir test 
-            cd test 
-            git clone https://github.com/AbdullahDev0/Food-Order-Management-System.git 
+            cd Food-Order-Management-System 
+            git pull
+            npm run build
+            pm2 restart foms
             echo 'Deployment successful to digital ocean'
