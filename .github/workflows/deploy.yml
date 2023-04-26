@@ -18,4 +18,5 @@ jobs:
             mkdir test 
             cd test 
             git clone git@github.com:AbdullahDev0/Food-Order-Management-System.git 
-            echo 'Deployment successful to digital ocean' 
+            echo 'Deployment successful to digital ocean'
+            
