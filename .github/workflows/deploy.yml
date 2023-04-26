@@ -18,11 +18,11 @@ jobs:
             cd Food-Order-Management-System
             git pull
             echo 'Deployment successful to digital ocean'
-      - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18.0.0
-      - run: npm --prefix ~/Food-Order-Management-System run build
+      # - uses: actions/checkout@v2
+      #   with:
+      #     persist-credentials: false
+      # - uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 18.0.0
+      - run: npm --prefix /../../Food-Order-Management-System run build
       - run: pm2 restart foms
