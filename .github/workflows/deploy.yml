@@ -17,7 +17,7 @@ jobs:
           script: |
             cd Food-Order-Management-System
             git pull
+            cd ~
             echo 'Deployment successful to digital ocean'
-      - run: echo pwd
       - run: npm run build
       - run: pm2 restart foms
