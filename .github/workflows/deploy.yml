@@ -17,6 +17,5 @@ jobs:
           script: |
             mkdir test 
             cd test 
-            git clone git@github.com:AbdullahDev0/Food-Order-Management-System.git 
+            git clone https://github.com/AbdullahDev0/Food-Order-Management-System.git 
             echo 'Deployment successful to digital ocean'
-            
