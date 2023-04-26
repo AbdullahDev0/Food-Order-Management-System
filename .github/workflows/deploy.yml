@@ -19,7 +19,7 @@ jobs:
             git pull
             echo 'Deployment successful to digital ocean'
       - run: npm run build
-      working-directory: Food-Order-Management-System
+        working-directory: Food-Order-Management-System
       - run: pm2 restart foms
-      working-directory: Food-Order-Management-System
+        working-directory: Food-Order-Management-System
 
