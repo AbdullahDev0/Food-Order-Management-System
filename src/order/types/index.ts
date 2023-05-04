@@ -6,7 +6,7 @@ export class SerializedOrder {
   food_type: string;
   order_quantity: number;
   created_at: Date;
-  
+
   @Exclude()
   updated_at: Date;
 
