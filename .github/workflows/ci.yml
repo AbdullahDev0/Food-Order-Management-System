@@ -12,8 +12,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        # Define the working directory for all run steps in the workflow
-        working-directory: ./web
     runs-on: ubuntu-latest
     steps:    
     - uses: actions/checkout@v3
@@ -33,8 +31,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        # Define the working directory for all run steps in the workflow
-        working-directory: ./web
     runs-on: ubuntu-latest
     steps:    
     - uses: actions/checkout@v3
